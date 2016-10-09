@@ -21,42 +21,42 @@ extension Data {
         return UInt16(s)
     }
     
-    public func md5() -> Data {
+    public func md5Data() -> Data {
         let result = Digest.md5(self.bytes)
         return Data(bytes: result)
     }
 
-    public func sha1() -> Data? {
+    public func sha1Data() -> Data {
         let result = Digest.sha1(self.bytes)
         return Data(bytes: result)
     }
 
-    public func sha224() -> Data? {
+    public func sha224Data() -> Data {
         let result = Digest.sha224(self.bytes)
         return Data(bytes: result)
     }
 
-    public func sha256() -> Data? {
+    public func sha256Data() -> Data {
         let result = Digest.sha256(self.bytes)
         return Data(bytes: result)
     }
 
-    public func sha384() -> Data? {
+    public func sha384Data() -> Data {
         let result = Digest.sha384(self.bytes)
         return Data(bytes: result)
     }
 
-    public func sha512() -> Data? {
+    public func sha512Data() -> Data {
         let result = Digest.sha512(self.bytes)
         return Data(bytes: result)
     }
 
-    public func crc32(seed: UInt32? = nil, reflect : Bool = true) -> Data? {
+    public func crc32Data(seed: UInt32? = nil, reflect : Bool = true) -> Data {
         let result = Checksum.crc32(self.bytes, seed: seed, reflect: reflect)
         return Data(bytes: result.bytes())
     }
 
-    public func crc16(seed: UInt16? = nil) -> Data? {
+    public func crc16Data(seed: UInt16? = nil) -> Data {
         let result = Checksum.crc16(self.bytes, seed: seed)
         return Data(bytes: result.bytes())
     }
